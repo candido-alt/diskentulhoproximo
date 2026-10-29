@@ -1,0 +1,603 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Disk Entulho | Retirada de Entulho e Caçambas</title>
+
+<meta name="description" content="Disk Entulho: serviços de retirada de entulho, aluguel de caçambas e limpeza de obras. Solicite seu orçamento!">
+
+<style>
+:root {
+    --amarelo: #ffc400;
+    --preto: #171717;
+    --cinza: #242424;
+    --branco: #ffffff;
+    --verde: #20bd65;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f5f5;
+    color: #222;
+}
+
+header {
+    background: var(--preto);
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 900;
+    color: var(--amarelo);
+}
+
+.logo span {
+    color: white;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--amarelo);
+}
+
+.hero {
+    min-height: 600px;
+    background:
+        linear-gradient(90deg, rgba(0,0,0,.92), rgba(0,0,0,.45)),
+        url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=85");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+    color: white;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.tag {
+    display: inline-block;
+    background: var(--amarelo);
+    color: #171717;
+    padding: 9px 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--amarelo);
+}
+
+.hero p {
+    font-size: 19px;
+    line-height: 1.7;
+    color: #eeeeee;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 16px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+    margin: 5px 8px 5px 0;
+}
+
+.btn-yellow {
+    background: var(--amarelo);
+    color: #171717;
+}
+
+.btn-yellow:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #171717;
+}
+
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: var(--amarelo);
+    padding: 28px 7%;
+    gap: 20px;
+    text-align: center;
+}
+
+.benefit strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+section {
+    padding: 85px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    color: #a77f00;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.section-title h2 {
+    font-size: clamp(29px, 4vw, 42px);
+    margin-top: 12px;
+    color: var(--preto);
+}
+
+.section-title p {
+    margin: 15px auto 0;
+    max-width: 650px;
+    color: #666;
+    line-height: 1.7;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.service {
+    background: white;
+    padding: 32px;
+    border-radius: 8px;
+    border-bottom: 4px solid var(--amarelo);
+    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+    transition: .3s;
+}
+
+.service:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.12);
+}
+
+.service .icon {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.service h3 {
+    margin-bottom: 13px;
+    font-size: 22px;
+}
+
+.service p {
+    color: #666;
+    line-height: 1.7;
+}
+
+.about {
+    background: var(--preto);
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 45px;
+    align-items: center;
+}
+
+.about h2 {
+    color: var(--amarelo);
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    line-height: 1.9;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+.about-box {
+    background: #292929;
+    padding: 30px;
+    border-left: 5px solid var(--amarelo);
+    border-radius: 5px;
+}
+
+.about-box h3 {
+    color: var(--amarelo);
+    margin-bottom: 15px;
+    font-size: 23px;
+}
+
+.about-box p {
+    margin-bottom: 10px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 25px;
+    text-align: center;
+}
+
+.step {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 8px;
+}
+
+.number {
+    width: 55px;
+    height: 55px;
+    background: var(--amarelo);
+    color: #171717;
+    font-size: 24px;
+    font-weight: bold;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
+.step h3 {
+    margin-bottom: 10px;
+}
+
+.step p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.contact {
+    background: #ececec;
+}
+
+.contact-card {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 35px rgba(0,0,0,.07);
+}
+
+.contact-card h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+footer {
+    background: #111;
+    color: #bbb;
+    padding: 30px 7%;
+    text-align: center;
+    line-height: 1.8;
+}
+
+footer strong {
+    color: var(--amarelo);
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    width: 60px;
+    height: 60px;
+    background: var(--verde);
+    color: white;
+    text-decoration: none;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 29px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.25);
+    z-index: 1000;
+}
+
+@media (max-width: 700px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .hero {
+        min-height: 540px;
+        padding: 60px 6%;
+    }
+
+    .benefits {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
+
+    .contact-card {
+        padding: 28px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">DISK <span>ENTULHO</span> 🏗️</div>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#empresa">A Empresa</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+    <div class="hero-content">
+
+        <div class="tag">SOLUÇÕES PARA SUA OBRA</div>
+
+        <h1>Entulho fora.<br><span>Obra em frente.</span></h1>
+
+        <p>
+            Precisa retirar entulho ou alugar uma caçamba?
+            Conte com uma solução prática para manter sua obra,
+            reforma ou terreno organizado.
+        </p>
+
+        <a href="#contato" class="btn btn-yellow">
+            SOLICITAR ORÇAMENTO
+        </a>
+
+        <a href="#servicos" class="btn btn-outline">
+            CONHEÇA OS SERVIÇOS
+        </a>
+
+    </div>
+</section>
+
+<div class="benefits">
+    <div class="benefit">
+        <strong>🚛 Retirada de Entulho</strong>
+        Soluções para sua obra
+    </div>
+
+    <div class="benefit">
+        <strong>🏗️ Aluguel de Caçambas</strong>
+        Para reformas e construções
+    </div>
+
+    <div class="benefit">
+        <strong>🧹 Limpeza de Obras</strong>
+        Mais organização no local
+    </div>
+</div>
+
+<section id="servicos">
+
+    <div class="section-title">
+        <span>O que fazemos</span>
+        <h2>Nossos Serviços</h2>
+        <p>
+            Atendimento para obras, reformas, empresas e clientes
+            residenciais que precisam de soluções para descarte de resíduos.
+        </p>
+    </div>
+
+    <div class="services">
+
+        <div class="service">
+            <div class="icon">🚛</div>
+            <h3>Retirada de Entulho</h3>
+            <p>
+                Remoção de resíduos de construção e reforma,
+                conforme o serviço contratado e as condições do local.
+            </p>
+        </div>
+
+        <div class="service">
+            <div class="icon">🏗️</div>
+            <h3>Aluguel de Caçambas</h3>
+            <p>
+                Caçambas para auxiliar no armazenamento temporário
+                de resíduos durante sua obra.
+            </p>
+        </div>
+
+        <div class="service">
+            <div class="icon">🧱</div>
+            <h3>Entulho de Construção</h3>
+            <p>
+                Soluções para resíduos de obras, demolições e
+                pequenas reformas, conforme disponibilidade.
+            </p>
+        </div>
+
+        <div class="service">
+            <div class="icon">🧹</div>
+            <h3>Limpeza de Terrenos e Obras</h3>
+            <p>
+                Serviços de organização e remoção de resíduos
+                para deixar o espaço pronto para a próxima etapa.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="about" id="empresa">
+
+    <div>
+        <h2>Sua obra merece praticidade.</h2>
+
+        <p>
+            Sabemos que uma obra organizada faz toda a diferença.
+            Por isso, nosso objetivo é ajudar você a encontrar
+            a solução adequada para a retirada e o descarte correto
+            dos resíduos.
+        </p>
+
+        <p>
+            Seja em uma reforma residencial, construção comercial
+            ou obra de maior porte, consulte nossas opções de atendimento.
+        </p>
+
+        <a href="#contato" class="btn btn-yellow">
+            FALE CONOSCO
+        </a>
+    </div>
+
+    <div class="about-box">
+        <h3>Por que nos consultar?</h3>
+
+        <p>✓ Atendimento para diferentes tipos de obra</p>
+        <p>✓ Opções conforme sua necessidade</p>
+        <p>✓ Solicitação de orçamento simplificada</p>
+        <p>✓ Orientação sobre o serviço adequado</p>
+    </div>
+
+</section>
+
+<section>
+
+    <div class="section-title">
+        <span>É simples</span>
+        <h2>Como funciona?</h2>
+    </div>
+
+    <div class="steps">
+
+        <div class="step">
+            <div class="number">1</div>
+            <h3>Entre em contato</h3>
+            <p>Informe seu endereço e o tipo de serviço necessário.</p>
+        </div>
+
+        <div class="step">
+            <div class="number">2</div>
+            <h3>Solicite seu orçamento</h3>
+            <p>Explique sua necessidade para consultar valores e disponibilidade.</p>
+        </div>
+
+        <div class="step">
+            <div class="number">3</div>
+            <h3>Combine o atendimento</h3>
+            <p>Confirme as condições e o agendamento do serviço.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="contact" id="contato">
+
+    <div class="contact-card">
+
+        <h2>Vamos cuidar do seu entulho?</h2>
+
+        <p>
+            Entre em contato para consultar valores, disponibilidade
+            e solicitar um orçamento para sua obra.
+        </p>
+
+        <!-- SUBSTITUA 55DDDNUMERO PELO TELEFONE COM DDD -->
+        <a
+            href="https://wa.me/55DDDNUMERO?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20Disk%20Entulho."
+            class="btn btn-yellow"
+            target="_blank"
+            rel="noopener noreferrer">
+            SOLICITAR ORÇAMENTO PELO WHATSAPP
+        </a>
+
+        <p style="margin-top:20px;margin-bottom:0;">
+            Atendimento mediante consulta de disponibilidade.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    <p><strong>DISK ENTULHO</strong></p>
+    <p>Retirada de entulho • Caçambas • Soluções para obras</p>
+    <p>© 2026 Disk Entulho. Todos os direitos reservados.</p>
+</footer>
+
+<a
+    class="whatsapp-float"
+    href="https://wa.me/55DDDNUMERO?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Fale conosco pelo WhatsApp">
+    ☎
+</a>
+
+</body>
+</html>
+```
